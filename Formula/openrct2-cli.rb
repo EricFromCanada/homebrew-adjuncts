@@ -7,6 +7,13 @@ class Openrct2Cli < Formula
   license "GPL-3.0-only"
   head "https://github.com/OpenRCT2/OpenRCT2.git", branch: "develop"
 
+  bottle do
+    root_url "https://ghcr.io/v2/ericfromcanada/adjuncts"
+    sha256 cellar: :any, arm64_sequoia: "6f4f5c09bc944cc07512d06057d4c1e1fc312287eac9a2003e8fd1fdc6604abe"
+    sha256 cellar: :any, arm64_sonoma:  "eb7feabd6b4fd838db60d992b7c1689f4be7fbedcb4717e67805ad08d6549431"
+    sha256               x86_64_linux:  "6f7d730a696a1537e1e089e846a1e43cd94fa8ade9faba8bf0f78a8c7b53887b"
+  end
+
   depends_on "cmake" => :build
   depends_on "nlohmann-json" => :build
   depends_on "pkgconf" => :build
