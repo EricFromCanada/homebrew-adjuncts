@@ -9,6 +9,13 @@ class Unrar < Formula
     regex(/href=.*?unrarsrc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/ericfromcanada/adjuncts"
+    sha256 cellar: :any,                 arm64_sequoia: "b5c8e1656cb9142e85388b678cdee0b19c441ae65c378598ca7793bf579b01ed"
+    sha256 cellar: :any,                 ventura:       "a018251f7ea098e55cb605775306ecba37e115b84f03f121fe56545b66358922"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b4cacb975e363da1f31c0a685e6cad240ec44217cb23e745a51db095f6b60c0"
+  end
+
   def install
     # upstream doesn't particularly care about their unix targets,
     # so we do the dirty work of renaming their shared objects to
